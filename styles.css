@@ -1,0 +1,284 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg: #111210;
+  --card: #1b1d19;
+  --card-light: #242720;
+  --text: #f2f2ec;
+  --muted: #92958b;
+  --lime: #c6ff4d;
+  --orange: #ff8a45;
+  --border: rgba(255,255,255,.09);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Manrope', sans-serif;
+  line-height: 1.6;
+  padding: 28px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+header {
+  max-width: 1200px;
+  margin: 0 auto 24px;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: 800;
+  letter-spacing: -2px;
+}
+
+.logo span,
+.hero h1 span {
+  color: var(--lime);
+}
+
+nav {
+  display: flex;
+  gap: 30px;
+}
+
+nav a,
+.contact-link {
+  color: var(--muted);
+  font-size: 13px;
+  transition: color .25s ease;
+}
+
+nav a:hover,
+.contact-link:hover {
+  color: var(--lime);
+}
+
+.contact-link {
+  color: var(--text);
+  border: 1px solid var(--border);
+  padding: 10px 16px;
+  border-radius: 10px;
+}
+
+main {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+main section {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 32px;
+  overflow: hidden;
+}
+
+.hero {
+  grid-column: span 4;
+  min-height: 390px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  background:
+    radial-gradient(circle at 85% 35%, rgba(198,255,77,.11), transparent 28%),
+    var(--card);
+}
+
+.hero > p:first-child,
+article > p:first-child {
+  color: var(--lime);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.hero h1 {
+  font-size: clamp(48px, 8vw, 88px);
+  line-height: 1.04;
+  letter-spacing: -5px;
+  margin: 22px 0;
+}
+
+.hero p:nth-of-type(2) {
+  color: var(--muted);
+  max-width: 560px;
+  font-size: 15px;
+}
+
+.hero > a {
+  display: inline-block;
+  margin-top: 28px;
+  padding: 13px 20px;
+  border-radius: 10px;
+  background: var(--lime);
+  color: #111210;
+  font-size: 13px;
+  font-weight: 800;
+  transition: transform .25s ease;
+}
+
+.hero > a:hover {
+  transform: translateY(-3px);
+}
+
+#about {
+  grid-column: span 2;
+  min-height: 220px;
+}
+
+#skills {
+  grid-column: span 2;
+  min-height: 220px;
+  background: var(--card-light);
+}
+
+#projects {
+  grid-column: span 4;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  background: transparent;
+  padding: 0;
+  border: none;
+}
+
+#projects h2 {
+  grid-column: span 2;
+  padding: 10px 4px;
+}
+
+h2 {
+  font-size: 25px;
+  letter-spacing: -1px;
+  margin-bottom: 18px;
+}
+
+section > p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+article {
+  min-height: 190px;
+  padding: 28px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  transition: transform .3s ease, border-color .3s ease;
+}
+
+article:hover {
+  transform: translateY(-5px);
+  border-color: var(--lime);
+}
+
+article:nth-of-type(2) > p:first-child {
+  color: var(--orange);
+}
+
+article h3 {
+  font-size: 21px;
+  margin: 22px 0 10px;
+}
+
+article p:last-child {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+footer {
+  max-width: 1200px;
+  margin: 24px auto 0;
+  padding: 25px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+@media (max-width: 700px) {
+  body {
+    padding: 14px;
+  }
+
+  header {
+    padding: 16px;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  nav {
+    order: 3;
+    width: 100%;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  main {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  main section {
+    padding: 23px;
+    border-radius: 17px;
+  }
+
+  .hero {
+    grid-column: span 2;
+    min-height: 340px;
+  }
+
+  .hero h1 {
+    font-size: 48px;
+    letter-spacing: -3px;
+  }
+
+  #about,
+  #skills {
+    grid-column: span 2;
+  }
+
+  #projects {
+    grid-column: span 2;
+    grid-template-columns: 1fr;
+  }
+
+  #projects h2 {
+    grid-column: span 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+}
